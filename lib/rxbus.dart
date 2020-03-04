@@ -36,7 +36,7 @@ class RxBus {
   static RxBus get singleton => _singleton;
 
   /// 监听事件。每次监听开启都会新建一个[PublishSubject] 防止重复监听事件
-  static Observable<T> register<T>({String tag}) {
+  static Stream<T> register<T>({String tag}) {
     if (tag != null && tag == _DEFAULT_IDENTIFIER) {
       throw FlutterError('EventBus register tag Can\'t is $_DEFAULT_IDENTIFIER ');
     }
